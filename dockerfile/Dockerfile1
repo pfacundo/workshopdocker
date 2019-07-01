@@ -1,0 +1,5 @@
+FROM facundop/nginx-ping:latest
+RUN apt install -y vim
+EXPOSE 80
+COPY prueba.txt /root/
+CMD /bin/bash 

@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  wordpress:
+    image: wordpress:latest 
+    ports:
+     - "9000:80"
+    networks:
+     - wordpress_mysql
+ 
+  db_wordpress:
+    image: db_wordpress:latest
+    networks:
+     - wordpress_mysql
+
+networks:
+  wordpress_mysql:
+    ipam:
+      config:
+       - subnet: 192.168.220.0/24
+  

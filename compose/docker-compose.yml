@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  webserver:
+    #image: facundop/nginx-light:latest
+    build: .
+    container_name: my-web-container
+    ports:
+      - "9000:80"
+    volumes:
+      - ./nginx/:/usr/share/nginx/html/
+    networks:
+      - nginx
+networks:
+  nginx:
